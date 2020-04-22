@@ -1,0 +1,50 @@
+{
+  "name": "model-next",
+  "version": "1.0.0-alpha",
+  "description": "Generic, base model class.",
+  "files": ["dist/**/*"],
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rezeus/model-next.git"
+  },
+  "scripts": {
+    "test": "cross-env TS_NODE_FILES=true mocha -r ts-node/register --exit test/*.test.ts",
+    "coverage": "nyc _mocha -r ts-node/register --exit test/*.ts",
+    "lint": "eslint . --ext .ts",
+    "build": "rimraf dist/ && tsc"
+  },
+  "keywords": [
+    "generic",
+    "model"
+  ],
+  "homepage": "https://github.com/rezeus/model-next",
+  "bugs": {
+    "url": "https://github.com/rezeus/model-next/issues"
+  },
+  "license": "MIT",
+  "author": "Ozan Müyesseroğlu <ozanmuyes@gmail.com>",
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.13.1",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
+    "dts-gen": "^0.6.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-no-loops": "^0.3.0",
+    "husky": "^4.2.5",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.9.0",
+    "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}
